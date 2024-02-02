@@ -1,21 +1,20 @@
-// import { useState } from 'react'
-// import './App.css'
+import { useState } from 'react'
 import Login from './components/Login'
 import Signup from './components/Signup'
 import Userinfo from './components/Userinfo'
+import { BrowserRouter as Router,
+  Routes, Route, Link } from 'react-router-dom'
 function App() {
-  // const [count, setCount] = useState(0)
+  const [user, setUser] = useState(null)
 
   return (
-    <>
-    Hello world
-    <br/>
-    <Login/>
-    <br/>
-    <Signup/>
-    <br/>
-    <Userinfo/>
-    </>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Login/>}/>
+        <Route path='/signup' element={<Signup/>}/>
+        <Route path='/userinfo' element={<Userinfo/>}/>
+      </Routes>
+    </Router>
   )
 }
 
