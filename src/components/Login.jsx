@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import loginService from '../services/loginService'
-
-const loginstatus = ()=> {
-    console.log(loginService.getStatus())
-}
+import { useNavigate } from 'react-router-dom';
 const Login = ({setUser}) =>{
+    const navigate = useNavigate()
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const handleSignup = () => {
+        navigate('/signup')
+    }
     const handleLogin = async(event) =>{
     event.preventDefault()
     try {
@@ -33,7 +34,7 @@ const Login = ({setUser}) =>{
                 </div>
                 <button type='submit'>login</button>
             </form>
-            <button onClick={loginstatus}>click to test the get status</button>
+            <button onClick={handleSignup}>signup</button>
         </div>
     )
 }
