@@ -3,16 +3,17 @@ const Userinfo = () =>{
         window.localStorage.clear()
         window.location.reload()
     }
+    const userInfo = JSON.parse(window.localStorage.getItem('loggedBlogAppUser'))
     return(
         <div>
             <button onClick={handleLogout}>Logout</button>
             <table>
                 <tbody>
                     <tr>
-                        <td>username - Dummy Username</td>
+                        <td>username - {userInfo.username}</td>
                     </tr>
                     <tr>
-                        <td>email - dummy@dummy.com</td>
+                        <td>email - {userInfo.email}</td>
                     </tr>
                 </tbody>
             </table>
