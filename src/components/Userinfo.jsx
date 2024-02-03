@@ -1,6 +1,11 @@
 const Userinfo = () =>{
+    const handleLogout = () =>{
+        window.localStorage.clear()
+        window.location.reload()
+    }
     return(
         <div>
+            <button onClick={handleLogout}>Logout</button>
             <table>
                 <tbody>
                     <tr>

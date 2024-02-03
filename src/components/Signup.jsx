@@ -12,7 +12,7 @@ const Signup = () =>{
                 <div>
                     password: <input />
                 </div>
-                <button type="submit">signup</button>
+                <button type='submit'>signup</button>
             </form>
         </div>
     )
